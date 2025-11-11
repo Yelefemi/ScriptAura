@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - ScriptAura Studios</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <img src="images/logo.png" alt="ScriptAura Studios Logo" class="logo">
+    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="divisions.html">Divisions</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>Let’s collaborate, create, and bring powerful stories to life.</p>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Reach out for partnerships, inquiries, or collaborations with ScriptAura Studios.</p>
+
+      <ul class="contact-details">
+        <li><i class="fa-solid fa-envelope"></i> info@scriptaura.studio</li>
+        <li><i class="fa-solid fa-phone"></i> +234 000 000 0000</li>
+        <li><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</li>
+      </ul>
+
+      <div class="contact-socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact-map">
+    <iframe src="https://www.google.com/maps?q=Lagos,+Nigeria&output=embed" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <div>
+      <h4>About ScriptAura</h4>
+      <p>A creative enterprise designed to empower storytellers, train talent, and build global industry connections.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="divisions.html">Divisions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+         <ul>
+        <li>Email: info@scriptaura.studio</li>
+        <li>Phone: +234-8060113357</li>
+        <li>Lagos, Nigeria</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 ScriptAura Studios. All Rights Reserved.</div>
+  </footer>
+  <!-- Chat Assistant Widget -->
+<div class="chat-widget">
+  <div class="chat-button" id="chat-toggle">
+    <i class="fa-solid fa-message"></i>
+  </div>
+
+  <div class="chat-box" id="chat-box">
+    <div class="chat-header">
+      <h4>ScriptAura Assistant</h4>
+      <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+      <div class="chat-message bot">Hi there 👋, I’m Aura! How can I help you today?</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
