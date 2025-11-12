@@ -1,14 +1,41 @@
 {
-  "buildCommand": "echo 'Static site, no build needed'",
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": ".",
   "public": ".",
   "routes": [
     {
       "src": "/api/send",
-      "dest": "/api/send.js"
+      "dest": "/api/send.js",
+      "methods": ["POST"]
     },
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/(.*)\\.html",
+      "dest": "/$1.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
+  ],
+  "ignore": [
+    "node_modules",
+    "netlify",
+    ".env*",
+    ".git",
+    "server.js",
+    "package.json",
+    "package-lock.json"
   ]
 }
