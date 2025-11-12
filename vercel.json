@@ -1,0 +1,14 @@
+{
+  "buildCommand": "echo 'Static site, no build needed'",
+  "public": ".",
+  "routes": [
+    {
+      "src": "/api/send",
+      "dest": "/api/send.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
