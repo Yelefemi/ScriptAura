@@ -7,8 +7,8 @@
     }
    .homeH {
   height: 95vh;
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
-              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(68, 29, 29, 0.65), rgba(0,0,0,0.8)),
+              url('./images/hero.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;

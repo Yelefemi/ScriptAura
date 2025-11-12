@@ -81,6 +81,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+  // Contact form submission (AJAX) - sends data to local backend at /send
+  const contactForm = document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contact-status');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      contactStatus.textContent = '';
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !message) {
+        contactStatus.textContent = 'Please fill out all fields.';
+        contactStatus.style.color = 'crimson';
+        return;
+      }
+
+      contactStatus.textContent = 'Sending...';
+      contactStatus.style.color = '';
+
+      // Helper to POST to an endpoint and return parsed JSON or throw
+      async function postTo(endpoint) {
+        const r = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+        const d = await r.json().catch(() => ({}));
+        return { res: r, data: d };
+      }
+
+      try {
+        // Try relative serverless route first (works on Vercel/Netlify). If that 404s or is not available,
+        // fall back to a local Express server at http://localhost:3000/send for easy local testing.
+        let attempt = await postTo('/api/send');
+        if (attempt.res.status === 404 || !attempt.res.ok && attempt.res.type === '') {
+          // fallback to local Express server
+          attempt = await postTo('http://localhost:3000/send');
+        }
+
+        if (attempt.res.ok && attempt.data && attempt.data.success) {
+          contactStatus.textContent = 'Message sent — thank you!';
+          contactStatus.style.color = 'green';
+          contactForm.reset();
+        } else {
+          contactStatus.textContent = attempt.data && attempt.data.error ? attempt.data.error : 'Failed to send message. See console or server logs.';
+          contactStatus.style.color = 'crimson';
+          console.error('Contact send failed', attempt.res && attempt.res.status, attempt.data);
+        }
+      } catch (err) {
+        console.error('Contact form error', err);
+        contactStatus.textContent = 'Could not send message. If you are testing locally either run the local mailer or deploy the API. See README.';
+        contactStatus.style.color = 'crimson';
+      }
+    });
+  }
+
 // Chat Assistant
 const chatToggle = document.getElementById('chat-toggle');
 const chatBox = document.getElementById('chat-box');

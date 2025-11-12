@@ -31,7 +31,7 @@
 
       <ul class="contact-details">
         <li><i class="fa-solid fa-envelope"></i> info@scriptaura.studio</li>
-        <li><i class="fa-solid fa-phone"></i> +234 000 000 0000</li>
+        <li><i class="fa-solid fa-phone"></i> +234-8060113357</li>
         <li><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</li>
       </ul>
 
@@ -45,12 +45,13 @@
 
     <div class="contact-form">
       <h2>Send a Message</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+      <form id="contact-form">
+        <input type="text" name="name" id="contact-name" placeholder="Your Name" required>
+        <input type="email" name="email" id="contact-email" placeholder="Your Email" required>
+        <textarea name="message" id="contact-message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+      <div id="contact-status" aria-live="polite" style="margin-top:0.5rem"></div>
     </div>
   </section>
 
