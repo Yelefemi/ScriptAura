@@ -1,8 +1,0 @@
-node_modules
-server.js
-package.json
-package-lock.json
-netlify
-.env*
-.git
-README.md
