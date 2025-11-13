@@ -376,6 +376,8 @@ section {
   color: #FFB347;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .exec-grid {
@@ -385,11 +387,12 @@ section {
   justify-content: center;
 }
 
+/* --- Card styling --- */
 .exec-card {
   background: #1c1c1c;
   padding: 30px;
   border-radius: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -405,19 +408,23 @@ section {
   box-shadow: 0 0 20px rgba(224, 123, 38, 0.4);
 }
 
+/* --- Image --- */
 .exec-card img {
   width: 140px;
   height: 140px;
   object-fit: cover;
-  border-radius: 10px; /* use 0 for perfectly square corners */
+  border-radius: 10px;
   margin-bottom: 20px;
   border: 3px solid #E07B26;
 }
 
+/* --- Text --- */
 .exec-card h3 {
   color: #E07B26;
   margin-bottom: 5px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 .exec-card .role {
@@ -430,10 +437,11 @@ section {
   color: #ccc;
   font-size: 0.95rem;
   line-height: 1.5;
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto 15px;
 }
 
+/* --- Socials --- */
 .exec-socials {
   display: flex;
   justify-content: center;
@@ -458,6 +466,31 @@ section {
 .exec-socials a:hover {
   color: #fff;
   transform: scale(1.2);
+}
+
+/* --- 📱 Mobile fix --- */
+@media (max-width: 768px) {
+  .exec-grid {
+    gap: 25px;
+  }
+
+  .exec-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .exec-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .exec-card .bio {
+    font-size: 0.9rem;
+  }
+
+  .executives {
+    padding: 60px 20px;
+  }
 }
 
 
