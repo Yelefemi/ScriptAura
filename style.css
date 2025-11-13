@@ -281,7 +281,7 @@ nav ul li a.active {
 header {
   height: 70vh;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('./images/all.jpg') center/cover no-repeat;
+              url('./images/all-min.jpg') center/cover no-repeat;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   text-align: center; padding: 0 20px;
