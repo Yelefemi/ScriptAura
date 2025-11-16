@@ -470,6 +470,10 @@ section {
 
 /* --- 📱 Mobile fix --- */
 @media (max-width: 768px) {
+  .executives, .exec-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
   .exec-grid {
     gap: 25px;
   }
@@ -492,6 +496,7 @@ section {
     padding: 60px 20px;
   }
 }
+
 
 
 /* Quote Banner */

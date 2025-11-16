@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Scroll reveal animation for general sections
-  const revealElements = document.querySelectorAll('section, footer, .divisions-preview, .impact, .testimonials, .cta-banner, .executives, .exec-card');
+const revealElements = document.querySelectorAll(
+  'section, footer, .divisions-preview, .impact, .testimonials, .cta-banner, .executives');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -38,13 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const execCards = document.querySelectorAll('.exec-card');
   if (execCards.length > 0) {
     const execObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show-section');
-          execObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-section');
+      execObserver.unobserve(entry.target);
+    }
+  });
+}, { 
+  threshold: window.innerWidth < 768 ? 0.05 : 0.25 
+});
     execCards.forEach(card => execObserver.observe(card));
   }
 
