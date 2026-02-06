@@ -1,3 +1,4 @@
+ /* General */
  body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -5,6 +6,8 @@
       color: #fff;
       overflow-x: hidden;
     }
+    
+    /* Home */
    .homeH {
   height: 95vh;
   background: linear-gradient(rgba(68, 29, 29, 0.65), rgba(0,0,0,0.8)),
@@ -137,6 +140,98 @@
       color: #6a11cb;
       font-weight: bold;
     }
+    /* ENHANCED PARTNERS SECTION */
+.partners-section.enhanced {
+  padding: 100px 40px;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.partners-section.enhanced h2 {
+  color: #E07B26;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.partners-section .partners-desc {
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 1rem;
+}
+
+.enhanced-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.enhanced-card {
+  background: linear-gradient(145deg, #1a1a1a, #141414);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 0 10px rgba(224, 123, 38, 0.15);
+  transition: 0.4s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.enhanced-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enhanced-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 179, 71, 0.35);
+  border-color: #E07B26;
+}
+
+.partner-logo {
+  width: 100%;
+  height: 140px;
+  background: #111;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.partner-logo img {
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+.enhanced-card:hover img {
+  transform: scale(1.08);
+}
+
+.partner-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 6px 0 12px;
+  background: #E07B26;
+  color: #000;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.enhanced-card h3 {
+  color: #FFB347;
+  margin-bottom: 6px;
+}
+
+.enhanced-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
     .testimonials {
       background: #111;
       padding: 60px 40px;
@@ -885,6 +980,117 @@ section, footer {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
     url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 }
+.members-section {
+  padding: 100px 40px;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.members-section h2 {
+  color: #E07B26;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.member-card {
+  background: linear-gradient(145deg, #1a1a1a, #141414);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 0 20px rgba(224, 123, 38, 0.15);
+  transition: 0.4s ease;
+  opacity: 1;
+  transform: none;
+}
+
+
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(255, 179, 71, 0.35);
+  border-color: #E07B26;
+}
+
+/* IMAGE */
+.member-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #000;
+}
+
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.member-card:hover .member-img img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+.member-content {
+  padding: 25px;
+}
+
+.member-name {
+  color: #FFB347;
+  margin-bottom: 8px;
+}
+
+.member-bio {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.showreel-btn {
+  display: inline-block;
+  background: #E07B26;
+  padding: 8px 18px;
+  border-radius: 6px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+.showreel-btn a{
+  color: #fff;
+  text-decoration: none;
+}
+.showreel-btn:hover {
+  background: #FFB347;
+  color: #000;
+}
+
+.member-details h4 {
+  color: #E07B26;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.member-details ul {
+  margin-left: 20px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Executives */
 /* ===== Contact Page ===== */

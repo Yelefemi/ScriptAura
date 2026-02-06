@@ -189,3 +189,34 @@ function getBotReply(input) {
   if (input.includes('project') || input.includes('collaborate')) return 'We’d love to collaborate! Tell me a bit about your idea.';
   return 'I’m still learning 🤖 — but our team will get back to you soon!';
 }
+
+// MEMBER CARD REVEAL
+const memberCards = document.querySelectorAll('.member-card');
+
+if (memberCards.length > 0) {
+  const revealMembers = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        revealMembers.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  memberCards.forEach(card => revealMembers.observe(card));
+}
+// ENHANCED PARTNER CARD REVEAL
+const enhancedPartnerCards = document.querySelectorAll('.enhanced-card');
+
+if (enhancedPartnerCards.length > 0) {
+  const revealEnhanced = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        revealEnhanced.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  enhancedPartnerCards.forEach(card => revealEnhanced.observe(card));
+}
